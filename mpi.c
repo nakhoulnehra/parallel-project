@@ -1,7 +1,3 @@
-// mpi.c — MPI version of SLA violation + storm detection
-// Same logic and same results as the sequential + pthreads versions.
-// Uses only data-2025-10.csv
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

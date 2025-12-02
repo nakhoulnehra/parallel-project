@@ -149,8 +149,7 @@ int main(int argc, char* argv[]) {
     printf("=== LOADING DATA ===\n");
 
     glob_t glob_result;
-
-    glob("data-2025-10.csv", GLOB_APPEND, NULL, &glob_result);
+    glob("data-2025-10.csv", GLOB_TILDE, NULL, &glob_result);
 
     for (size_t i = 0; i < glob_result.gl_pathc; i++) {
         printf("Loading %s...\n", glob_result.gl_pathv[i]);

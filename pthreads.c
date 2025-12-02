@@ -1,7 +1,3 @@
-// pthread_sla_storms.c — Pthreads version of SLA violation + storm detection
-// Same logic as sequential/MPI versions, but parallelized with POSIX threads.
-// Uses only data-2025-09.csv and data-2025-10.csv.
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -207,12 +203,6 @@ void* thread_worker(void* arg) {
                 local_storms++;
             }
         }
-
-        // Optional: local progress (commented to avoid spam)
-        // if (((i - start_i + 1) % 100000) == 0) {
-        //     printf("Thread [%d-%d): processed %d records...\n",
-        //            start_i, end_i, i - start_i + 1);
-        // }
     }
 
     args->local_violations = local_viol;
